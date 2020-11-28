@@ -1,10 +1,10 @@
-<ul>
-    {{ range .Pages }}
-    
-    <li>
+{{ range .Pages }}
+    <article>
+        <div class="date">
+            <time>{{ with site.Params.DateForm }}{{ .Date.Format . }}{{ else }}{{ .Date.Format "Mon, Jan 2, 2006" }}{{ end }}</time>
+        </div>
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        <time>{{ with site.Params.DateForm }}{{ .Date.Format . }}{{ else }}{{ .Date.Format "Mon, Jan 2, 2006" }}{{ end }}</time>
-        <div>{{ .Summary }}</div>
-    </li>
-    {{ end }}
-</ul>
+        <div>{{ .Summary }}...</div>
+    </article>
+    <hr>
+{{ end }}

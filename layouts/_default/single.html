@@ -1,12 +1,16 @@
 {{ define "main" }}
+<div class="date">
+    <time>{{ with site.Params.DateForm }}{{ .Date.Format . }}{{ else }}{{ .Date.Format "Mon, Jan 2, 2006" }}{{ end }}</time>
+</div>
 <h2>{{ .Title }}</h2>
-<time>{{ with site.Params.DateForm }}{{ .Date.Format . }}{{ else }}{{ .Date.Format "Mon, Jan 2, 2006" }}{{ end }}</time>
-{{ range (.GetTerms "tags")}}
-<ul>
-    <li>
-        <a href="{{.RelPermalink}}">{{.LinkTitle}}</a>
-    </li>
-</ul>
-{{ end }}
+<div class="grid -right">
+    {{ range (.GetTerms "tags")}}
+        <div class="cell -1of12">
+            <div class="tag">
+                <a href="{{.RelPermalink}}">{{.LinkTitle}}</a>
+            </div>
+        </div>
+    {{ end }}
+</div>
 <div>{{ .Content }}</div>
 {{ end }}
