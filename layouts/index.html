@@ -1,0 +1,6 @@
+{{ define "main" }}
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ $paginator := .Paginate $pages}}
+{{ partial "pagelist.html" $paginator }}
+{{ template "_internal/pagination.html" . }}
+{{ end }}

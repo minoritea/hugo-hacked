@@ -1,0 +1,11 @@
+<div class="header">
+    <div class="grid -right">
+        {{ range site.Menus.main }}
+            <div class="cell" style="display: inline-flex;">
+                <div style="margin: 0 0 0 auto;">
+                    <a href="{{.URL}}">{{.Name}}</a>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+</div>

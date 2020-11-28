@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h2>{{ .Title }}</h2>
+<time>{{ with site.Params.DateForm }}{{ .Date.Format . }}{{ else }}{{ .Date.Format "Mon, Jan 2, 2006" }}{{ end }}</time>
+{{ range (.GetTerms "tags")}}
+<ul>
+    <li>
+        <a href="{{.RelPermalink}}">{{.LinkTitle}}</a>
+    </li>
+</ul>
+{{ end }}
+<div>{{ .Content }}</div>
+{{ end }}
