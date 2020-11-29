@@ -1,6 +1,10 @@
 <head>
     <meta charset="utf-8" />
-    <title>{{ .Site.Title }} {{ if isset .Site.Params "subtitle" }}- {{ .Site.Params.Subtitle }}{{ end }}</title>
+    {{ if .IsHome }}
+    <title>{{ .Site.Title }}</title>
+    {{ else }}
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ end }}
     <link rel="stylesheet" href="//unpkg.com/hack@0.8.1/dist/hack.css">
     <link rel="stylesheet" href="/css/app.css">
     {{ template "_internal/opengraph.html" . }}
