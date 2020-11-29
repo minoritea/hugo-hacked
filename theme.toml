@@ -3,9 +3,9 @@
 
 name = "Hacked"
 license = "MIT"
-licenselink = "https://github.com/minoritea/hacked/blob/master/LICENSE"
+licenselink = "https://github.com/minoritea/hugo-hacked/blob/master/LICENSE"
 description = ""
-homepage = "http://github.com/minoritea/hacked"
+homepage = "http://github.com/minoritea/hugo-hacked"
 tags = []
 features = []
 min_version = "0.41.0"
