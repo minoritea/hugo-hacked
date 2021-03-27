@@ -2,7 +2,7 @@
 <div class="date">
     <time>{{ with site.Params.DateForm }}{{ .Date.Format . }}{{ else }}{{ .Date.Format "Mon, Jan 2, 2006" }}{{ end }}</time>
 </div>
-<h2>{{ .Title }}</h2>
+<h1 class="article-title">{{ .Title }}</h1>
 <div class="grid -right">
     {{ range (.GetTerms "tags")}}
         <div class="cell -1of12">
